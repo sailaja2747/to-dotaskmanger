@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+        <h1>My Tasks <span>✓</span></h1>
+        <p class="subtitle">Plan your day. Get things done.</p>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="stat-card">
+        <p>Total Tasks</p>
+        <h2 id="totalCount">0</h2>
+      </div>
+      <div class="stat-card">
+        <p>Pending</p>
+        <h2 id="pendingCount">0</h2>
+      </div>
+      <div class="stat-card">
+        <p>Completed</p>
+        <h2 id="completedCount">0</h2>
+      </div>
+    </section>
+
+    <section class="task-panel">
+      <h2 id="formTitle">Add a New Task</h2>
+      <form id="taskForm">
+        <input id="taskInput" type="text"
+          placeholder="What do you need to do?"
+          maxlength="200" required>
+        <div class="form-row">
+          <select id="priorityInput" aria-label="Task priority">
+            <option value="Low">Low priority</option>
+            <option value="Medium" selected>Medium priority</option>
+            <option value="High">High priority</option>
+          </select>
+          <input id="dueDateInput" type="date" aria-label="Due date">
+          <button id="submitButton" type="submit">+ Add Task</button>
+          <button id="cancelEdit" type="button" hidden>Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="list-panel">
+      <div class="list-heading">
+        <h2>Your Task List</h2>
+        <select id="filterInput" aria-label="Filter tasks">
+          <option value="All">All tasks</option>
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
+      <p id="message" role="status"></p>
+      <ul id="taskList"></ul>
+    </section>
+    <footer>Stay focused. One task at a time.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
